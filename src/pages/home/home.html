@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Tesseract
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ng-progress [min]="0" [max]="1"></ng-progress>
+    
+    <button ion-button full (click)="selectSource()">Select Image</button>
+    <button ion-button full (click)="recognizeImage()" [disabled]="!selectedImage">Recognize Image</button>
+    
+    <img [src]="selectedImage" *ngIf="selectedImage">
+    
+    <ion-card *ngIf="imageText">
+        <ion-card-header>Image Text</ion-card-header>
+        <ion-card-content>
+            {{ imageText }}
+        </ion-card-content>
+    </ion-card>
+    
 </ion-content>
