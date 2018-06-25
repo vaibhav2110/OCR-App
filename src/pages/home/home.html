@@ -7,7 +7,6 @@
 </ion-header>
 
 <ion-content padding>
-  <ng-progress [min]="0" [max]="1"></ng-progress>
     
     <button ion-button full (click)="selectSource()">Select Image</button>
     <button ion-button full (click)="recognizeImage()" [disabled]="!selectedImage">Recognize Image</button>
